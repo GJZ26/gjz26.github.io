@@ -6,17 +6,26 @@ import Experience from "../features/Experience";
 import Certificates from "../features/Certificates";
 import SideProjects from "../features/SideProjects";
 import Links from "../features/Links";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Main() {
   //console.log(window.matchMedia('(prefers-color-scheme: dark)'))
   return (
-    <div className="content">
-      <Head />
-      <GenericLayout title="Sobre Mi" children={<About />} />
-      <GenericLayout title="Experiencia" children={<Experience />} />
-      <GenericLayout title="Certificados" children={<Certificates />} />
-      <GenericLayout title="Proyectos Personales" children={<SideProjects />} />
-      <GenericLayout title="Enlaces" children={<Links />} />
-    </div>
+    <>
+      <Header />
+      <div className="content">
+        <Head />
+        <GenericLayout title="Sobre Mi" children={<About />} />
+        <GenericLayout title="Experiencia" children={<Experience />} />
+        <GenericLayout title="Certificados" children={<Certificates />} />
+        <GenericLayout
+          title="Proyectos Personales"
+          children={<SideProjects />}
+        />
+        <GenericLayout title="Enlaces" children={<Links />} />
+      </div>
+      <Footer />
+    </>
   );
 }

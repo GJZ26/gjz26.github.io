@@ -1,0 +1,67 @@
+@import '../helpers/Variables.styl';
+
+header {
+    _pad_top = 20px;
+    _pad_side = 70px;
+    --pad-side: _pad_side * 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - var(--pad-side)); // Da     width: calc(100% - _space); y no     width: calc(100% - 20px);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: _pad_top _pad_side 0px _pad_side;
+
+    div.theme-picker {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            Regular_P(primary_color);
+        }
+
+        select {
+            background-color: background_color;
+            border: none;
+            appearance: none;
+            width: 100px;
+            Regular_P(primary_color);
+            cursor: pointer;
+            padding: 0;
+            margin-top: -3px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    div.lang-picker {
+        label {
+            display: inline-block;
+            Regular_P(third_color);
+            cursor: pointer;
+
+            &:first-child {
+                margin-right: 10px;
+            }
+
+            input[type='radio'] {
+                display: none;
+            }
+
+            &:has(input[type='radio']:checked) {
+                color: primary_color;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
