@@ -1,4 +1,4 @@
-import "../styles/sections/About.styl";
+import "../styles/features/About.styl";
 
 export default function About() {
   const today = new Date();

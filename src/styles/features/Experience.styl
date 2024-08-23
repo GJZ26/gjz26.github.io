@@ -1,0 +1,106 @@
+@import '../helpers/Variables.styl';
+
+div.timeline {
+    margin-top: 50px;
+
+    div.segment {
+        display: block;
+        margin-left: 100px;
+        padding: 0px 0px 60px 14px;
+        border-left: 1px solid third_color;
+
+        &::before {
+            size = 8px;
+            position: absolute;
+            display: block;
+            content: '';
+            width: size;
+            height: size;
+            background-color: third_color;
+            border-radius: 50%;
+            margin-left: -18px;
+            margin-top: -4px;
+        }
+
+        &:last-child {
+            padding-bottom: 40px;
+
+            &::after {
+                content: '';
+                overflow-wrap: normal;
+                position: absolute;
+                width: 8px;
+                height: 3px;
+                background-color: third_color;
+                margin-left: -18.2px;
+                margin-top: 40px;
+            }
+        }
+
+        span.date {
+            Dates();
+            color: third_color;
+            position: absolute;
+            margin-top: -9px;
+            margin-left: -330px;
+            text-align: right;
+            width: 300px;
+        }
+
+        h3 {
+            position: absolute;
+            margin: -12px 0px 0px;
+
+            a {
+                text-decoration: none;
+                color: primary_color;
+
+                &::after {
+                    content: '\1F86D';
+                    position: absolute;
+                    display: inline-block;
+                    height: 12px;
+                    font-size: 10px;
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        span.role {
+            margin-top: 10px;
+            display: inline-block;
+            Regular_P();
+            color: secondary_color;
+        }
+
+        div.mode {
+            position: absolute;
+            margin-top: -25px;
+
+            span {
+                Extra_Small();
+                color: secondary_color;
+                Dots(3px, 12px, 14.4px, secondary_color);
+            }
+        }
+
+        p {
+            Regular_P();
+            color: text_color;
+            margin: 6px 0px 13px;
+        }
+
+        div.stack {
+            display: flex;
+            gap: 8px;
+
+            div.pills {
+                Extra_Small();
+                color: secondary_color;
+                border: 1px solid secondary_color;
+                padding: 1px 10px;
+                border-radius: 5px;
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import "../styles/sections/Head.styl";
+import "../styles/features/Head.styl";
 import Time from "../components/utils/Time";
 
 export default function Head() {

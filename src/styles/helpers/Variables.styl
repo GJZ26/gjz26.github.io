@@ -52,3 +52,21 @@ Dates(_color = var(--text-color)) {
 Extra_Small(_color = var(--text-color)) {
     custom_font(1, _regular, _color);
 }
+
+/* Funciones de ayuda :D */
+Dots(dot_size = 10px, margin_space = 10px, container_height = 20px, dot_color = primary_color) {
+    &:not(:last-child) {
+        margin-right: margin_space;
+
+        &:after {
+            position: absolute;
+            content: '';
+            display: inline-block;
+            width: dot_size;
+            height: dot_size;
+            background-color: dot_color;
+            border-radius: 50%;
+            margin: (container_height / 2) - (dot_size / 2) 0px 0px (margin_space / 2) - (dot_size / 2);
+        }
+    }
+}
