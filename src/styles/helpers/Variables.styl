@@ -95,3 +95,26 @@ No_Image(width_size = 10px, height_size = width_size) {
     height: height_size;
     background: var(--image-place-holder-gr);
 }
+
+Down_Arrow(size = 10px) {
+    &::after {
+        position: absolute;
+        margin-left: 7px;
+        margin-top: (size / 2) - (size / 2) - 2px;
+        content: '\1F863';
+        display: inline-block;
+        // border-bottom: 1px solid;
+        height: size + 3px;
+        font-size: size;
+    }
+
+    &:hover {
+        text-decoration: underline;
+
+        &::after {
+            // height: size + 1px;
+            transform: translateY(2px);
+            transition: all 200ms ease-in
+        }
+    }
+}

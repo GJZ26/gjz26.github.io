@@ -5,6 +5,7 @@ import "../styles/pages/Main.styl";
 import Experience from "../features/Experience";
 import Certificates from "../features/Certificates";
 import SideProjects from "../features/SideProjects";
+import Links from "../features/Links";
 
 export default function Main() {
   //console.log(window.matchMedia('(prefers-color-scheme: dark)'))
@@ -15,6 +16,7 @@ export default function Main() {
       <GenericLayout title="Experiencia" children={<Experience />} />
       <GenericLayout title="Certificados" children={<Certificates />} />
       <GenericLayout title="Proyectos Personales" children={<SideProjects />} />
+      <GenericLayout title="Enlaces" children={<Links />} />
     </div>
   );
 }
