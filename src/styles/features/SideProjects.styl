@@ -1,0 +1,43 @@
+@import '../helpers/Variables.styl';
+
+div.projects {
+    margin-top: 25px;
+
+    div.project-card {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        display: flex;
+        gap: 15px;
+
+        span {
+            width: 25px;
+            flex-shrink: 0;
+            Extra_Small(secondary_color);
+        }
+
+        div.thumb {
+            flex-shrink: 0;
+            No_Image(95px);
+        }
+
+        div.info {
+            flex-grow: 0;
+
+            h3 {
+                margin: 0;
+
+                a {
+                    color: primary_color;
+                    text-decoration: none;
+                    Arrow(10px);
+                }
+            }
+
+            p {
+                Small_P(text_color);
+            }
+        }
+    }
+}
