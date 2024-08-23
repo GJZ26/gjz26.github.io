@@ -19,7 +19,7 @@ export default function Time({
       timeZoneName: "shortOffset",
     };
 
-    let formatter = new Intl.DateTimeFormat([], options);
+    const formatter = new Intl.DateTimeFormat([], options);
     const currentTime = formatter.format(new Date().getTime());
     setTime(currentTime);
     setIsOff(isWithinRange(currentTime, off_time));
@@ -64,7 +64,7 @@ export default function Time({
     const id = setInterval(updateTime, 1000);
 
     return () => clearInterval(id);
-  }, []);
+  });
 
   return (
     <span>
