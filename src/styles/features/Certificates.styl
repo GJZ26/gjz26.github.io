@@ -1,0 +1,56 @@
+@import '../helpers/Variables.styl';
+
+div.certificates {
+    margin-top: 20px; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+    div.cert-card {
+        border: 1px third_color solid;
+        width: 400px;
+        padding: 15px 15px;
+
+        div.main {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            div.badge {
+                size = 54px;
+                width: size;
+                height: size;
+                background: var(--image-place-holder-bg);
+                background: var(--image-place-holder-gr);
+            }
+
+            h3 {
+                margin: 0;
+                max-width: 330px;
+
+                a {
+                    text-decoration: none;
+                    H3();
+                    color: primary_color;
+                    Arrow();
+                }
+            }
+        }
+
+        div.foot {
+            display: flex;
+            justify-content: space-between;
+            Extra_Small();
+            width: 100%;
+            color: secondary_color;
+
+            div {
+                span {
+                    Dots(4px, 12px, 14.4px, secondary_color);
+                }
+            }
+        }
+    }
+}

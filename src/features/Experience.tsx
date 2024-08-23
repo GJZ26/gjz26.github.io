@@ -75,8 +75,8 @@ const exp: Array<Experience> = [
 export default function Experience() {
   return (
     <div className="timeline">
-      {exp.map((experience) => (
-        <TimelineSegment experience={experience} />
+      {exp.map((experience, index) => (
+        <TimelineSegment experience={experience} key={index}/>
       ))}
     </div>
   );

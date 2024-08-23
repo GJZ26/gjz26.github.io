@@ -50,8 +50,8 @@ export default function TimelineSegment({
       <span className="role">{experience.role}</span>
       <p>{experience.description}</p>
       <div className="stack">
-        {experience.stack.map((tech) => (
-          <div className="pills">{tech}</div>
+        {experience.stack.map((tech, index) => (
+          <div className="pills" key={index}>{tech}</div>
         ))}
       </div>
     </div>
