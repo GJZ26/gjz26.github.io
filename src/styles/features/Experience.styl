@@ -5,8 +5,8 @@ div.timeline {
 
     div.segment {
         display: block;
-        margin-left: 100px;
-        padding: 0px 0px 60px 14px;
+        margin-left: 150px;
+        padding: 0px 0px 80px 14px;
         border-left: 1px solid third_color;
 
         &::before {
@@ -54,20 +54,12 @@ div.timeline {
             a {
                 text-decoration: none;
                 color: primary_color;
-
-                &::after {
-                    content: '\1F86D';
-                    position: absolute;
-                    display: inline-block;
-                    height: 12px;
-                    font-size: 10px;
-                    margin-left: 2px;
-                }
+                Arrow(10px);
             }
         }
 
         span.role {
-            margin-top: 10px;
+            margin-top: 13px;
             display: inline-block;
             Regular_P();
             color: secondary_color;

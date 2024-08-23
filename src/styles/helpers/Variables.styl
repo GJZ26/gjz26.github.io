@@ -70,3 +70,22 @@ Dots(dot_size = 10px, margin_space = 10px, container_height = 20px, dot_color = 
         }
     }
 }
+
+Arrow(size=12px) {
+    &::after {
+        content: '\1F86D';
+        position: absolute;
+        font-size: size;
+        margin-left: 2px;
+        transition: transform 200ms ease-out;
+    }
+
+    &:hover {
+        text-decoration: underline;
+
+        &::after {
+            transform: translate(2px, -3px);
+            transition: transform 200ms ease-out;
+        }
+    }
+}
