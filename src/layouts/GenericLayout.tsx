@@ -9,7 +9,7 @@ export default function GenericLayout({
 }) {
   return (
     <div className="generic-layout">
-      <h3>{title}</h3>
+      <h3 id={title.toLowerCase().replace(/ /g, "_")}>{title}</h3>
       {children}
     </div>
   );

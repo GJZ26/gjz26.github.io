@@ -1,0 +1,25 @@
+@import '../helpers/Variables.styl';
+
+div.minimap {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 40px;
+    left: 60px;
+
+    a {
+        text-decoration: none;
+        Dates(third_color, _light);
+        transition: all 100ms ease-in-out;
+
+        &.focus {
+            Dates(primary_color, _medium);
+            transition: all 300ms ease-in-out;
+        }
+
+        &:not(.focus):hover {
+            Dates(secondary_color, _regular);
+            transition: all 200ms ease-in-out;
+        }
+    }
+}

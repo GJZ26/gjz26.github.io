@@ -8,12 +8,14 @@ import SideProjects from "../features/SideProjects";
 import Links from "../features/Links";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Minimap from "../components/Minimap";
 
 export default function Main() {
   //console.log(window.matchMedia('(prefers-color-scheme: dark)'))
   return (
     <>
       <Header />
+      <Minimap />
       <div className="content">
         <Head />
         <GenericLayout title="Sobre Mi" children={<About />} />
