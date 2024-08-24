@@ -1,9 +1,32 @@
 @import '../helpers/Variables.styl';
 
-footer
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    z-index: 1000
-    margin-top: 12px
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 15px;
+    box-sizing: border-box;
+
+    > * {
+        flex: 1;
+        Extra_Small(secondary_color);
+    }
+
+    span {
+        text-align: center;
+    }
+
+    div.app-info {
+        text-align: right;
+
+        a {
+            color: secondary_color;
+            margin-left: 20px;
+        }
+    }
+}

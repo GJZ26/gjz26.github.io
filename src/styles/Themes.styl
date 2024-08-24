@@ -15,3 +15,27 @@ html, html.dark {
     --image-place-holder-bg: #f3f2f2;
     --image-place-holder-gr: linear-gradient(180deg, rgba(243, 242, 242, 1) 0%, rgba(141, 141, 141, 1) 100%);
 }
+
+html.debug {
+    * {
+        outline: 1px dashed rgba(0, 255, 42, 0.379) !important;
+    }
+
+    --font-family: monospace, monospace;
+    --background-color: black;
+    --primary-color: blue;
+    --text-color: yellow;
+    --secondary-color: red;
+    --third-color: rgb(238, 16, 157);
+    --image-place-holder-gr: rgb(0, 204, 255);
+}
+
+html.light {
+    --background-color: #f0f0f0;
+    --primary-color: #232323;
+    --text-color: #333333;
+    --secondary-color: #545454;
+    --third-color: #555555;
+    --image-place-holder-bg: #E0E0E0;
+    --image-place-holder-gr: linear-gradient(180deg, rgba(224, 224, 224, 1) 0%, rgba(141, 141, 141, 1) 100%); 
+}

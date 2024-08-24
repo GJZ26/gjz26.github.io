@@ -13,7 +13,7 @@ export default function Header() {
       <div className="lang-picker">
         <label htmlFor="es">
           Español
-          <input type="radio" name="lang" id="es" checked />
+          <input type="radio" name="lang" id="es" defaultChecked />
         </label>
         <label htmlFor="en">
           English
