@@ -5,10 +5,10 @@ header {
     _pad_side = 70px;
     --pad-side: _pad_side * 2;
     position: fixed;
+    box-sizing: border-box;
     top: 0;
     left: 0;
-    width: calc(100% - var(--pad-side)); // Da     width: calc(100% - _space); y no     width: calc(100% - 20px);
-    z-index: 1000;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: _pad_top _pad_side 0px _pad_side;

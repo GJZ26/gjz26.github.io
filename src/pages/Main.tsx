@@ -9,23 +9,39 @@ import Links from "../features/Links";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Minimap from "../components/Minimap";
+import useSystemTranslations from "../shared/hooks/useSystemTranslations";
+import useUserData from "../shared/hooks/useUserData";
 
 export default function Main() {
-  //console.log(window.matchMedia('(prefers-color-scheme: dark)'))
+  const { systemTranslations } = useSystemTranslations();
+  const { userData } = useUserData();
+
   return (
     <>
       <Header />
       <Minimap />
       <div className="content">
         <Head />
-        <GenericLayout title="Sobre Mi" children={<About />} />
-        <GenericLayout title="Experiencia" children={<Experience />} />
-        <GenericLayout title="Certificados" children={<Certificates />} />
         <GenericLayout
-          title="Proyectos Personales"
-          children={<SideProjects />}
+          title={systemTranslations.about}
+          children={<About data={userData.sections.about} />}
         />
-        <GenericLayout title="Enlaces" children={<Links />} />
+        <GenericLayout
+          title={systemTranslations.experiences}
+          children={<Experience data={userData.sections.experiences} />}
+        />
+        <GenericLayout
+          title={systemTranslations.certificates}
+          children={<Certificates data={userData.sections.certificates} />}
+        />
+        <GenericLayout
+          title={systemTranslations.side_project}
+          children={<SideProjects data={userData.sections.side_project} />}
+        />
+        <GenericLayout
+          title={systemTranslations.links}
+          children={<Links data={userData.sections.links} />}
+        />
       </div>
       <Footer />
     </>

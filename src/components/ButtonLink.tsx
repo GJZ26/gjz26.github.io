@@ -1,13 +1,8 @@
-import { linkButtonInterface } from "../features/Links";
+import { LinkButton } from "../shared/interfaces/SectionsInterfaces";
 
-export default function ButtonLink({ btn }: { btn: linkButtonInterface }) {
+export default function ButtonLink({ btn }: { btn: LinkButton }) {
   return (
-    <a
-      href={btn.link}
-      className="btn"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href={btn.uri} className="btn" target="_blank" rel="noopener noreferrer">
       {btn.text}
     </a>
   );

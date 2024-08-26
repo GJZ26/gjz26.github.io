@@ -1,32 +1,13 @@
 import ButtonLink from "../components/ButtonLink";
+import { LinksData } from "../shared/interfaces/SectionsInterfaces";
 import "../styles/features/Links.styl";
 
-export interface linkButtonInterface {
-  text: string;
-  link: string;
-}
-
-const btns_samples: Array<linkButtonInterface> = [
-  {
-    text: "Envíame un correo",
-    link: "mailto:some@mail.com",
-  },
-  {
-    text: "Conectemos por LinkedIn",
-    link: "https://linkedin.com",
-  },
-  {
-    text: "Sígueme en GitHub",
-    link: "https://github.com",
-  },
-];
-
-export default function Links() {
+export default function Links({ data }: { data: LinksData }) {
   return (
     <div className="links">
       <div className="links-button">
-        {btns_samples.map((bnt, index) => (
-          <ButtonLink btn={bnt} key={index} />
+        {data.map((btn, index) => (
+          <ButtonLink btn={btn} key={index} />
         ))}
       </div>
       <div className="cvs">

@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 import "../styles/components/Minimap.styl";
-
-const sections = [
-  "Sobre Mi",
-  "Experiencia",
-  "Certificados",
-  "Proyectos Personales",
-  "Enlaces",
-];
+import useUserData from "../shared/hooks/useUserData";
+import useSystemTranslations from "../shared/hooks/useSystemTranslations";
+import { Info } from "../shared/interfaces/SectionsInterfaces";
 
 export default function Minimap() {
+  const { userData } = useUserData();
+  const { systemTranslations } = useSystemTranslations();
   const [current, setCurrent] = useState(0);
 
-  const ids = sections.map((name) => name.toLowerCase().replace(/ /g, "_"));
+  const systemKeys = Object.keys(systemTranslations);
+
+  const sections = Object.keys(userData.sections).map((key) => {
+    if (systemKeys.includes(key)) {
+      return systemTranslations[key as keyof Info["sections"]];
+    }
+  });
+
+  const ids = sections.map((name) => name?.toLowerCase().replace(/ /g, "_"));
 
   const updateCurrentSection = () => {
     const limit = window.innerHeight / 10;
@@ -48,13 +53,13 @@ export default function Minimap() {
 
   return (
     <div className="minimap">
-      {sections.map((section, index) => (
+      {Object.keys(userData.sections).map((section, index) => (
         <a
           key={section}
           href={`./#${ids[index]}`}
           className={`${index === current ? "focus" : ""}`}
         >
-          {section}
+          {systemTranslations[section as keyof Info["sections"]]}
         </a>
       ))}
     </div>

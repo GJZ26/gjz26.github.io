@@ -1,0 +1,20 @@
+import { AvailableLangs } from "../config/LangsAvailables";
+import { ThemesAvailables } from "../config/ThemesAvailables";
+import { Info, modesAvailables } from "./SectionsInterfaces";
+import { MonthsAvailables } from "./TimeInterface";
+
+export interface LanguageTranslation
+  extends Record<modesAvailables, string>,
+    Record<keyof Info["sections"], string>,
+    Record<ThemesAvailables, string> {
+  language: string;
+  theme: string;
+  version: string;
+  source: string;
+  month: Record<MonthsAvailables, string>;
+  title: string;
+  present: string;
+}
+
+export type AppTranslation = Record<AvailableLangs, LanguageTranslation>;
+export type TranslatedInfo = Record<AvailableLangs, Info>;
