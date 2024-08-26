@@ -4,7 +4,7 @@ import { HourRange } from "./TimeInterface";
 import { TimeZone } from "./TimeZones";
 
 export interface Config {
-  readonly version?: string;
+  readonly version: string;
   global: {
     translatable: boolean;
     allowChangeTheme: boolean;

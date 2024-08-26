@@ -28,14 +28,13 @@ import {
   #    General Information    #
   #############################
 */
-const name = "John"; //Your names
+const name = "John"; // Your names
 const lastname = "Doe Bloggs"; // Your Last Name
-const role = "Full-time Demo User";
+const role = "Full-time Demo User"; // What do you specialize in?
 const aka = "Fulano"; // ? - Also known as, nickname, what do you like to be called more
 const image = "https://thispersondoesnotexist.com/"; // ? - Your image/avatar
 
-const location: Location = {
-  // ? - Your location
+const location: Location = { // ? - Your location
   country: "Austresia", // ? - Country of origin
   state: "Diena", // ? - City/State/Province of origin
 };
@@ -55,8 +54,7 @@ const experiences: ExperienceData = [
     // A brief description of what you did at the company or during your position
     description:
       "Designed and implemented a scalable RESTful API used by multiple services, improving system efficiency by 25%.",
-    duration: {
-      // Length of time at the company
+    duration: { // Length of time at the company
       init: {
         month: "Jan",
         year: 2022,
@@ -67,10 +65,9 @@ const experiences: ExperienceData = [
       },
       current: true, // Are you currently working here?
     },
-    location: {
-      // ? - Company location
-      country: "Canada",
-      state: "Ontario",
+    location: { // ? - Company location
+      country: "Canada", // ?
+      state: "Ontario", // ?
     },
     mode: "remote", // ? - How did you work in this company?
     skills: ["Java", "Spring Boot", "MySQL"], // ? -Outstanding skills
@@ -132,16 +129,14 @@ const experiences: ExperienceData = [
 const certificates: CertificateData = [
   {
     title: "Specialization Program: Google Data Analysis", // Course or certification name
-    date: {
-      // Certificate issue date
+    date: { // Certificate issue date
       month: "Aug",
       year: 2024,
     },
     issuer: "Google", // Certificate issuer
-    // Link to the issuer's site to validate the certificate
-    uri: "https://cataas.com/cat/says/Your%20certificate%20should%20appear%20here?font=Comic%20Sans%20MS&fontSize=20&fontColor=%23000&fontBackground=%23fff&position=center",
-    // ? - Certificate or badge image
-    badge:
+    uri: // Link to the issuer's site to validate the certificate
+    "https://cataas.com/cat/says/Your%20certificate%20should%20appear%20here?font=Comic%20Sans%20MS&fontSize=20&fontColor=%23000&fontBackground=%23fff&position=center",
+    badge: // ? - Certificate or badge image
       "https://png.pngtree.com/png-clipart/20230527/original/pngtree-gold-luxury-certified-badge-with-red-ribbon-and-white-combination-color-png-image_9170717.png",
     skills: ["Data Analysis", "SQL", "DataViz"], // Skills learned
   },
@@ -181,11 +176,11 @@ const side_project: SideProjectData = [
   {
     title: "EcoShopper", // Project name
     year: 2023, // Year of development
-    // Description of what your project does
-    description:
+    description: // Description of what your project does
       "EcoShopper is a mobile app that helps users find eco-friendly products and track their carbon footprint while shopping.",
     image: "https://cataas.com/cat", // ? - Project screenshot or preview
-    uri: "https://cataas.com/cat/says/Man%2C%20I%20love%20cats?font=Comic%20Sans%20MS&fontSize=20&fontColor=%23000&fontBackground=%23fff&position=center", // ? - Live project URL or repository
+    uri: // ? - Link to the project demo or to the repository
+    "https://cataas.com/cat/says/Man%2C%20I%20love%20cats?font=Comic%20Sans%20MS&fontSize=20&fontColor=%23000&fontBackground=%23fff&position=center", // ? - Live project URL or repository
   },
   {
     title: "AI Recipe Generator",
@@ -214,12 +209,12 @@ export const links: LinksData = [
   {
     text: "Send me an email",
     uri: "mailto:some@mail.com",
-    icon: EmailIcon, // Use JSX element here
+    icon: EmailIcon, // ? -  Icon to display next to the button
   },
   {
     text: "Let's connect through LinkedIn",
     uri: "https://www.linkedin.com/",
-    icon: LinkedInIcon, // Use JSX element here
+    icon: LinkedInIcon,
   },
   {
     text: "Follow me on GitHub",
