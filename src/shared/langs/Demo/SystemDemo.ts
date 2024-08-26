@@ -8,7 +8,7 @@
 import { LanguageTranslation } from "../../interfaces/LangInterface";
 
 export const SystemDemo: LanguageTranslation = {
-  title: "Simple Web Portfolio", // The text that is displayed in the browser tab
+  title: "Demo Web Portfolio", // The text that is displayed in the browser tab
   language: "Demo", // How the language should be displayed in the header bar!
   theme: "Theme",
   about: "About Me",

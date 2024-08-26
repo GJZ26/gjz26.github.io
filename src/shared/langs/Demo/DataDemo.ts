@@ -11,6 +11,9 @@
  *
  ***********************************************************************/
 
+import EmailIcon from "../../../assets/icons/EmailIcon";
+import GitHubIcon from "../../../assets/icons/GitHubIcon";
+import LinkedInIcon from "../../../assets/icons/LinkedInIcon";
 import {
   CertificateData,
   ExperienceData,
@@ -211,17 +214,17 @@ export const links: LinksData = [
   {
     text: "Send me an email",
     uri: "mailto:some@mail.com",
-    icon: "#",
+    icon: EmailIcon, // Use JSX element here
   },
   {
-    text: "Let's connect through LinkedInd",
+    text: "Let's connect through LinkedIn",
     uri: "https://www.linkedin.com/",
-    icon: "#",
+    icon: LinkedInIcon, // Use JSX element here
   },
   {
     text: "Follow me on GitHub",
     uri: "https://github.com/",
-    icon: "#",
+    icon: GitHubIcon,
   },
 ];
 

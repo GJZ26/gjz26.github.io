@@ -43,7 +43,7 @@ export interface SideProject {
 export interface LinkButton {
   text: string;
   uri: string;
-  icon?: string;
+  icon?: Function;
 }
 
 export interface Info {
