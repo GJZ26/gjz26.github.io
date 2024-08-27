@@ -2,6 +2,7 @@ import {
   createContext,
   Dispatch,
   SetStateAction,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -26,7 +27,9 @@ export function SystemConfigContextProvider({
   const value = useMemo(() => ({ configs, setConfig }), [defaultConfig]);
 
   // Seteamos las configuraciones por defecto!
-  document.documentElement.className = configs.global.currentTheme;
+  useEffect(() => {
+    document.documentElement.className = configs.global.currentTheme;
+  }, []);
 
   return (
     <SystemConfigContext.Provider value={value}>
