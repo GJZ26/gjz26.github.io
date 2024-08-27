@@ -17,9 +17,20 @@ div.certificates {
             div.foot {
                 justify-content: center !important;
 
-                &>span {
+                &>div {
                     &:first-child {
                         display: none;
+                    }
+                }
+
+                div {
+                    &.issuer {
+                        span {
+                            Dots(4px, 12px, 14.4px, secondary_color);
+                            display: inline !important;
+                            width: 100%;
+                            text-align: right;
+                        }
                     }
                 }
             }
@@ -73,8 +84,19 @@ div.certificates {
             width: 100%;
 
             div {
-                span {
-                    Dots(4px, 12px, 14.4px, secondary_color);
+                &.issuer {
+                    span {
+                        display: block;
+                        width: 100%;
+                        text-align: right;
+                    }
+                }
+
+                &.skills {
+                    span {
+                        display: block;
+                        width: 100%;
+                    }
                 }
             }
         }

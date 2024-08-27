@@ -27,16 +27,18 @@ export default function CertificatesCard({
   function renderSkills() {
     if (certificate.skills && certificate.skills.length > 0) {
       return (
-        <span>
-          {systemTranslations.skills}:{" "}
-          {certificate.skills.map((skill, index) => {
-            if (certificate.skills) {
-              return index !== certificate.skills.length - 1
-                ? `${skill}, `
-                : `${skill}.`;
-            }
-          })}
-        </span>
+        <div className="skills">
+          <span>{systemTranslations.skills}</span>
+          <span>
+            {certificate.skills.map((skill, index) => {
+              if (certificate.skills) {
+                return index !== certificate.skills.length - 1
+                  ? `${skill}, `
+                  : `${skill}.`;
+              }
+            })}
+          </span>
+        </div>
       );
     }
     return null;
@@ -54,7 +56,7 @@ export default function CertificatesCard({
       </div>
       <div className="foot">
         {renderSkills()}
-        <div>
+        <div className="issuer">
           <span>
             {systemTranslations.month[certificate.date.month]}{" "}
             {certificate.date.year}
