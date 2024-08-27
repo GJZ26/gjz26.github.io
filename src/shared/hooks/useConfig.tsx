@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { SystemConfigContext } from "../context/SystemConfigContext";
 import { AvailableLangs } from "../config/LangsAvailables";
 import { Themes, ThemesAvailables } from "../config/ThemesAvailables";
@@ -12,10 +12,6 @@ export default function useConfig() {
   }
 
   const { configs, setConfig } = context;
-
-  useEffect(() => {
-    console.log("Configuración global actualizada:", configs.global);
-  }, [configs.global]);
 
   const changeLang = (lang: AvailableLangs) => {
     const updatedConfig = {

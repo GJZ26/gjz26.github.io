@@ -52,7 +52,6 @@ export default function Minimap() {
   useEffect(() => {
     window.addEventListener("scroll", updateCurrentSection);
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("scroll", updateCurrentSection);
     };

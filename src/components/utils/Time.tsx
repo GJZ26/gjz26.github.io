@@ -4,7 +4,7 @@ import useConfig from "../../shared/hooks/useConfig";
 export default function Time() {
   const { config } = useConfig();
 
-  if (!config.global.timeZone || !config.head.showTimeZone) {
+  if (!shouldDisplayTimeZone(config)) {
     return <></>;
   }
 
@@ -12,8 +12,17 @@ export default function Time() {
   const [isOff, setIsOff] = useState(false);
 
   function updateTime() {
+    const currentTime = formatCurrentTime(config.global.timeZone);
+    setTime(currentTime);
+
+    if (config.global.inactiveHours) {
+      setIsOff(isWithinRange(currentTime));
+    }
+  }
+
+  function formatCurrentTime(timeZone?: string): string {
     const options: Intl.DateTimeFormatOptions = {
-      timeZone: config.global.timeZone,
+      timeZone,
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
@@ -21,37 +30,17 @@ export default function Time() {
     };
 
     const formatter = new Intl.DateTimeFormat([], options);
-    const currentTime = formatter.format(new Date().getTime());
-    setTime(currentTime);
+    return formatter.format(new Date().getTime());
+  }
 
-    if (config.global.inactiveHours) setIsOff(isWithinRange(currentTime));
+  function shouldDisplayTimeZone(config: any): boolean {
+    return config.global.timeZone && config.head.showTimeZone;
   }
 
   function isWithinRange(currentTime: string): boolean {
-    let currentMinutes = 0;
-    let initialMinutes = 0;
-    let finalMinutes = 0;
-
-    currentTime
-      .split(" ")[0]
-      .split(":")
-      .forEach((part, index) => {
-        if (index === 0) {
-          currentMinutes += parseInt(part) * 60;
-        } else if (index === 1) {
-          currentMinutes += parseInt(part);
-        }
-      });
-
-    config.global.inactiveHours?.start_hour.split(":").forEach((part, i) => {
-      const minutes = parseInt(part) * (i === 0 ? 60 : 1);
-      initialMinutes += minutes;
-    });
-
-    config.global.inactiveHours?.end_hour.split(":").forEach((part, i) => {
-      const minutes = parseInt(part) * (i === 0 ? 60 : 1);
-      finalMinutes += minutes;
-    });
+    const currentMinutes = convertTimeToMinutes(currentTime);
+    const initialMinutes = convertTimeToMinutes(config.global.inactiveHours?.start_hour);
+    const finalMinutes = convertTimeToMinutes(config.global.inactiveHours?.end_hour);
 
     if (initialMinutes > finalMinutes) {
       return currentMinutes >= initialMinutes || currentMinutes <= finalMinutes;
@@ -60,16 +49,31 @@ export default function Time() {
     }
   }
 
+  function convertTimeToMinutes(time: string | undefined): number {
+    if (!time) return 0;
+
+    const [hours, minutes] = time.split(":").map(Number);
+    return hours * 60 + minutes;
+  }
+
+  function renderStatusIcon(): string {
+    if (!config.global.inactiveHours || !config.head.indicateStatus) {
+      return "";
+    }
+
+    return isOff ? "🌙" : "🧑‍💻";
+  }
+
   useEffect(() => {
     updateTime();
     const id = setInterval(updateTime, 1000);
 
     return () => clearInterval(id);
-  });
+  }, []);
 
   return (
     <span>
-      {time} {config.global.inactiveHours && config.head.indicateStatus ? (isOff ? "🌙" : "🧑‍💻") : ""}
+      {time} {renderStatusIcon()}
     </span>
   );
 }

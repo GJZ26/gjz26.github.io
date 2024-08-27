@@ -7,38 +7,53 @@ export default function CertificatesCard({
   certificate: Certificate;
 }) {
   const { systemTranslations } = useSystemTranslations();
+
+  function renderBadge() {
+    if (certificate.badge) {
+      return (
+        <div
+          className="badge"
+          style={{ backgroundImage: `url("${certificate.badge}")` }}
+        />
+      );
+    }
+    return null;
+  }
+
+  function renderTitleClass() {
+    return certificate.badge ? "" : "only";
+  }
+
+  function renderSkills() {
+    if (certificate.skills && certificate.skills.length > 0) {
+      return (
+        <span>
+          {systemTranslations.skills}:{" "}
+          {certificate.skills.map((skill, index) => {
+            if (certificate.skills) {
+              return index !== certificate.skills.length - 1
+                ? `${skill}, `
+                : `${skill}.`;
+            }
+          })}
+        </span>
+      );
+    }
+    return null;
+  }
+
   return (
     <div className="cert-card">
       <div className="main">
-        {certificate.badge ? (
-          <div
-            className="badge"
-            style={{ backgroundImage: `url("${certificate.badge}")` }}
-          />
-        ) : (
-          ""
-        )}
-        <h3 className={certificate.badge ? "" : "only"}>
+        {renderBadge()}
+        <h3 className={renderTitleClass()}>
           <a href={certificate.uri} target="_blank" rel="noopener noreferrer">
             {certificate.title}
           </a>
         </h3>
       </div>
       <div className="foot">
-        {certificate.skills && certificate.skills.length > 0 ? (
-          <span>
-            {systemTranslations.skills}:{" "}
-            {certificate.skills.map((skill, index) =>
-              !skill
-                ? ""
-                : certificate.skills && index !== certificate.skills.length - 1
-                ? `${skill}, `
-                : `${skill}.`
-            )}
-          </span>
-        ) : (
-          ""
-        )}
+        {renderSkills()}
         <div>
           <span>
             {systemTranslations.month[certificate.date.month]}{" "}

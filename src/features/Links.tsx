@@ -13,33 +13,45 @@ export default function Links({
 }) {
   const { systemTranslations, rawContext } = useSystemTranslations();
   const { config } = useConfig();
-  return data.length === 0 ? (
-    <p className="empty-alert">{systemTranslations.empty_links}</p>
-  ) : (
-    <div className="links">
-      <div className="links-button">
-        {data.map((btn, index) => (
-          <ButtonLink btn={btn} key={index} />
-        ))}
-      </div>
-      {config.links.showCV && cvs ? (
+
+  function renderCVLinks() {
+    if (config.links.showCV && cvs) {
+      return (
         <div className="cvs">
           <a href={cvs.main.uri} download={true} className="main">
             {systemTranslations.download_cv_in}{" "}
             {rawContext[cvs.main.lang].language}
           </a>
-          {cvs.secondary ? (
+          {cvs.secondary && (
             <a href={cvs.secondary.uri} download={true} className="second">
               {systemTranslations.download_cv_in}{" "}
               {rawContext[cvs.secondary.lang].language}
             </a>
-          ) : (
-            ""
           )}
         </div>
-      ) : (
-        ""
-      )}
+      );
+    }
+    return null;
+  }
+
+  function renderLinksButtons() {
+    return (
+      <div className="links-button">
+        {data.map((btn, index) => (
+          <ButtonLink btn={btn} key={index} />
+        ))}
+      </div>
+    );
+  }
+
+  if (data.length === 0) {
+    return <p className="empty-alert">{systemTranslations.empty_links}</p>;
+  }
+
+  return (
+    <div className="links">
+      {renderLinksButtons()}
+      {renderCVLinks()}
     </div>
   );
 }
