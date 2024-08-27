@@ -49,7 +49,7 @@ export default function Minimap() {
     return () => {
       window.removeEventListener("scroll", updateCurrentSection);
     };
-  }, [current, ids]);
+  }, [current, ids, updateCurrentSection]);
 
   return (
     <div className="minimap">

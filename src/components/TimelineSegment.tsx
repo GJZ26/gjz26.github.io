@@ -21,10 +21,23 @@ export default function TimelineSegment({
             ) + ` ${experience.duration.end.year}`}
       </span>
       <div className="mode">
-        <span>
-          {experience.location?.state}, {experience.location?.country}
-        </span>
-        <span>{systemTranslations[experience.mode]}</span>
+        {experience.location &&
+        (experience.location.country || experience.location.state) ? (
+          <span>
+            {experience.location?.state}
+            {experience.location.country && experience.location.state
+              ? ", "
+              : " "}
+            {experience.location?.country}
+          </span>
+        ) : (
+          ""
+        )}
+        {experience.mode ? (
+          <span>{systemTranslations[experience.mode]}</span>
+        ) : (
+          ""
+        )}
       </div>
       <h3>
         {experience.uri ? (
@@ -39,11 +52,15 @@ export default function TimelineSegment({
       <p>{experience.description}</p>
       <div className="stack">
         {experience.skills !== undefined
-          ? experience.skills.map((tech, index) => (
-              <div className="pills" key={index}>
-                {tech}
-              </div>
-            ))
+          ? experience.skills.map((tech, index) =>
+              tech ? (
+                <div className="pills" key={index}>
+                  {tech}
+                </div>
+              ) : (
+                ""
+              )
+            )
           : ""}
       </div>
     </div>

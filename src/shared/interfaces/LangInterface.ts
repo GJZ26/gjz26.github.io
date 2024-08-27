@@ -14,6 +14,11 @@ export interface LanguageTranslation
   month: Record<MonthsAvailables, string>;
   title: string;
   present: string;
+  empty_experience: string;
+  empty_certificates: string;
+  empty_side_projects: string;
+  empty_links: string;
+  skills: string;
 }
 
 export type AppTranslation = Record<AvailableLangs, LanguageTranslation>;

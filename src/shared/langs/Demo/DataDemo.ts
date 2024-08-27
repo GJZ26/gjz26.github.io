@@ -51,8 +51,7 @@ const experiences: ExperienceData = [
   {
     company: "Global Tech Corp", // Company with which you worked
     role: "Software Engineer", // Role or position held
-    // A brief description of what you did at the company or during your position
-    description:
+    description: // A brief description of what you did at the company or during your position
       "Designed and implemented a scalable RESTful API used by multiple services, improving system efficiency by 25%.",
     duration: { // Length of time at the company
       init: {

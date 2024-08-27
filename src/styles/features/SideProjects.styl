@@ -21,6 +21,17 @@ div.projects {
             flex-shrink: 0;
             No_Image(95px);
             Image_Background(true);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.placeholder {
+                &::after {
+                    content: '</>';
+                    H1(white, _bold, monospace);
+                    text-align: center;
+                }
+            }
         }
 
         div.info {

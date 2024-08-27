@@ -4,7 +4,12 @@ export default function ProjectCard({ project }: { project: SideProject }) {
   return (
     <div className="project-card">
       <span>{project.year}</span>
-      <div className="thumb" style={{ backgroundImage: `url("${project.image}")` }} />
+      <div
+        className={`thumb ${project.image ? "" : "placeholder"}`}
+        style={
+          project.image ? { backgroundImage: `url("${project.image}")` } : {}
+        }
+      />
       <div className="info">
         <h3>
           {project.uri ? (

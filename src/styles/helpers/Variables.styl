@@ -13,7 +13,7 @@ _regular = 400;
 _light = 300;
 
 /* --- Funciones internas --- */
-custom_font(size = 1, weight = normal, font_color, font_family = var(--font-family)) {
+custom_font(size = 1, weight = normal, font_color, font_family) {
     font-family: font_family;
     font-size: unit(size, rem);
     font-weight: weight;
@@ -21,36 +21,36 @@ custom_font(size = 1, weight = normal, font_color, font_family = var(--font-fami
 }
 
 /* ---  Tipografias --- */
-H1(_color = var(--text-color), _weight = _bold) {
-    custom_font(3.2, _weight, _color);
+H1(_color = var(--text-color), _weight = _bold, _font_family = var(--font-family)) {
+    custom_font(3.2, _weight, _color, _font_family);
 }
 
-H2(_color = var(--text-color), _weight = _semibold) {
-    custom_font(2, _weight, _color);
+H2(_color = var(--text-color), _weight = _semibold, _font_family = var(--font-family)) {
+    custom_font(2, _weight, _color, _font_family);
 }
 
-H3(_color = var(--text-color), _weight = _semibold) {
-    custom_font(1.6, _weight, _color);
+H3(_color = var(--text-color), _weight = _semibold, _font_family = var(--font-family)) {
+    custom_font(1.6, _weight, _color, _font_family);
 }
 
-Extract(_color = var(--text-color), _weight = _regular) {
-    custom_font(1.4, _weight, _color);
+Extract(_color = var(--text-color), _weight = _regular, _font_family = var(--font-family)) {
+    custom_font(1.4, _weight, _color, _font_family);
 }
 
-Regular_P(_color = var(--text-color), _weight = _regular) {
-    custom_font(1.3, _weight, _color);
+Regular_P(_color = var(--text-color), _weight = _regular, _font_family = var(--font-family)) {
+    custom_font(1.3, _weight, _color, _font_family);
 }
 
-Small_P(_color = var(--text-color), _weight = _regular) {
-    custom_font(1.2, _weight, _color);
+Small_P(_color = var(--text-color), _weight = _regular, _font_family = var(--font-family)) {
+    custom_font(1.2, _weight, _color, _font_family);
 }
 
-Dates(_color = var(--text-color), _weight = _light) {
-    custom_font(1.2, _weight, _color);
+Dates(_color = var(--text-color), _weight = _light, _font_family = var(--font-family)) {
+    custom_font(1.2, _weight, _color, _font_family);
 }
 
-Extra_Small(_color = var(--text-color), _weight = _regular) {
-    custom_font(1, _weight, _color);
+Extra_Small(_color = var(--text-color), _weight = _regular, _font_family = var(--font-family)) {
+    custom_font(1, _weight, _color, _font_family);
 }
 
 /* Funciones de ayuda :D */

@@ -13,7 +13,7 @@ export interface Experience {
   description: string;
   duration: DateRange;
   location?: Location;
-  mode: modesAvailables;
+  mode?: modesAvailables;
   skills?: Array<string>;
   uri?: string;
 }

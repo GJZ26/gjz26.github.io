@@ -1,9 +1,13 @@
 import ButtonLink from "../components/ButtonLink";
+import useSystemTranslations from "../shared/hooks/useSystemTranslations";
 import { LinksData } from "../shared/interfaces/SectionsInterfaces";
 import "../styles/features/Links.styl";
 
 export default function Links({ data }: { data: LinksData }) {
-  return (
+  const { systemTranslations } = useSystemTranslations();
+  return data.length === 0 ? (
+    <p className="empty-alert">{systemTranslations.empty_links}</p>
+  ) : (
     <div className="links">
       <div className="links-button">
         {data.map((btn, index) => (

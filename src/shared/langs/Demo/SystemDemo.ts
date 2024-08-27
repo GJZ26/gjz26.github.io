@@ -39,4 +39,9 @@ export const SystemDemo: LanguageTranslation = {
   dark: "Dark",
   light: "Light",
   debug: "Debug",
+  empty_experience: "No experience to show",
+  empty_certificates: "No certificate to show",
+  empty_side_projects: "No side project to show",
+  empty_links: "No links to show",
+  skills: "Skills"
 };

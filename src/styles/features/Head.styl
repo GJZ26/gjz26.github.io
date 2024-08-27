@@ -7,6 +7,7 @@ div.head {
     justify-content: center;
 
     div.user-image {
+        flex-shrink: 0;
         No_Image(13.6rem);
         Image_Background();
         border-radius: 50%;
@@ -14,12 +15,20 @@ div.head {
     }
 
     div.head-content {
+        &.only {
+            width: 100%;
+            text-align: center
+        }
+
+        flex-grow: 0;
+
         h1 {
             H1(primary_color);
+            line-height: 4rem;
         }
 
         h2 {
-            margin: -11px 0px 7px;
+            margin: -5px 0px 7px;
             H2(primary_color);
         }
 

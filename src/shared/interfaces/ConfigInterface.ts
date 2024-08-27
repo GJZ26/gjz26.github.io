@@ -26,6 +26,7 @@ export interface Config {
     indicateStatus: boolean;
   };
   experience: {
+    max_skills_listed: number;
     abreviate_month: boolean;
   };
   links: {

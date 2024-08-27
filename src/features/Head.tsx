@@ -7,20 +7,31 @@ export default function Head() {
 
   return (
     <div className="head">
-      <div
-        className="user-image"
-        style={{ backgroundImage: `url("${userData.image}")` }}
-      />
-      <div className="head-content">
+      {userData.image ? (
+        <div
+          className="user-image"
+          style={{ backgroundImage: `url("${userData.image}")` }}
+        />
+      ) : (
+        ""
+      )}
+      <div className={`head-content ${userData.image ? "" : "only"}`}>
         <h1>
           {userData.name} {userData.lastname}
         </h1>
         <h2>{userData.role}</h2>
         <div className="extra-info">
-          <span>@{userData.aka}</span>
-          <span>
-            {userData.location?.state}, {userData.location?.country}
-          </span>
+          {userData.aka ? <span>@{userData.aka}</span> : ""}
+          {userData.location &&
+          (userData.location.state || userData.location.country) ? (
+            <span>
+              {userData.location?.state}
+              {userData.location.state && userData.location.country ? ", " : ""}
+              {userData.location?.country}
+            </span>
+          ) : (
+            ""
+          )}
           <Time />
         </div>
       </div>

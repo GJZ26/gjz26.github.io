@@ -10,24 +10,35 @@ export default function CertificatesCard({
   return (
     <div className="cert-card">
       <div className="main">
-        <div className="badge" style={{ backgroundImage: `url("${certificate.badge}")` }} />
-        <h3>
+        {certificate.badge ? (
+          <div
+            className="badge"
+            style={{ backgroundImage: `url("${certificate.badge}")` }}
+          />
+        ) : (
+          ""
+        )}
+        <h3 className={certificate.badge ? "" : "only"}>
           <a href={certificate.uri} target="_blank" rel="noopener noreferrer">
             {certificate.title}
           </a>
         </h3>
       </div>
       <div className="foot">
-        <span>
-          Habilidades:{" "}
-          {certificate.skills
-            ? certificate.skills.map((skill, index) =>
-                certificate.skills && index !== certificate.skills.length - 1
-                  ? `${skill}, `
-                  : `${skill}.`
-              )
-            : ""}
-        </span>
+        {certificate.skills && certificate.skills.length > 0 ? (
+          <span>
+            {systemTranslations.skills}:{" "}
+            {certificate.skills.map((skill, index) =>
+              !skill
+                ? ""
+                : certificate.skills && index !== certificate.skills.length - 1
+                ? `${skill}, `
+                : `${skill}.`
+            )}
+          </span>
+        ) : (
+          ""
+        )}
         <div>
           <span>
             {systemTranslations.month[certificate.date.month]}{" "}
