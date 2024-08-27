@@ -19,6 +19,7 @@ export interface LanguageTranslation
   empty_side_projects: string;
   empty_links: string;
   skills: string;
+  download_cv_in: string;
 }
 
 export type AppTranslation = Record<AvailableLangs, LanguageTranslation>;

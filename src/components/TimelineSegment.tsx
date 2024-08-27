@@ -1,3 +1,4 @@
+import useConfig from "../shared/hooks/useConfig";
 import useSystemTranslations from "../shared/hooks/useSystemTranslations";
 import { Experience } from "../shared/interfaces/SectionsInterfaces";
 
@@ -7,18 +8,24 @@ export default function TimelineSegment({
   experience: Experience;
 }) {
   const { systemTranslations } = useSystemTranslations();
+  const { config } = useConfig();
 
   return (
     <div className="segment">
       <span className="date">
-        {systemTranslations.month[experience.duration.init.month].slice(0, 3)}{" "}
+        {config.experience.abreviate_month
+          ? systemTranslations.month[experience.duration.init.month].slice(0, 3)
+          : systemTranslations.month[experience.duration.init.month]}{" "}
         {experience.duration.init.year} -{" "}
         {experience.duration.current
           ? systemTranslations.present
-          : systemTranslations.month[experience.duration.end.month].slice(
-              0,
-              3
-            ) + ` ${experience.duration.end.year}`}
+          : (config.experience.abreviate_month
+              ? systemTranslations.month[experience.duration.end.month].slice(
+                  0,
+                  3
+                )
+              : systemTranslations.month[experience.duration.end.month]) +
+            ` ${experience.duration.end.year}`}
       </span>
       <div className="mode">
         {experience.location &&
@@ -53,7 +60,7 @@ export default function TimelineSegment({
       <div className="stack">
         {experience.skills !== undefined
           ? experience.skills.map((tech, index) =>
-              tech ? (
+              tech && config.experience.max_skills_listed > index ? (
                 <div className="pills" key={index}>
                   {tech}
                 </div>
@@ -62,6 +69,14 @@ export default function TimelineSegment({
               )
             )
           : ""}
+        {experience.skills &&
+        config.experience.max_skills_listed < experience.skills.length ? (
+          <div className="pills">
+            {experience.skills.length - config.experience.max_skills_listed}+
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

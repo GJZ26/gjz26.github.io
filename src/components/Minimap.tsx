@@ -3,8 +3,15 @@ import "../styles/components/Minimap.styl";
 import useUserData from "../shared/hooks/useUserData";
 import useSystemTranslations from "../shared/hooks/useSystemTranslations";
 import { Info } from "../shared/interfaces/SectionsInterfaces";
+import useConfig from "../shared/hooks/useConfig";
 
 export default function Minimap() {
+  const { config } = useConfig();
+
+  if (!config.global.showMinimap) {
+    return <></>;
+  }
+
   const { userData } = useUserData();
   const { systemTranslations } = useSystemTranslations();
   const [current, setCurrent] = useState(0);

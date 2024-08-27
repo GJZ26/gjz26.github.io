@@ -43,5 +43,6 @@ export const SystemDemo: LanguageTranslation = {
   empty_certificates: "No certificate to show",
   empty_side_projects: "No side project to show",
   empty_links: "No links to show",
-  skills: "Skills"
+  skills: "Skills",
+  download_cv_in: "Download CV in"
 };

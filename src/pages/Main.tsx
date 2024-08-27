@@ -40,7 +40,7 @@ export default function Main() {
         />
         <GenericLayout
           title={systemTranslations.links}
-          children={<Links data={userData.sections.links} />}
+          children={<Links data={userData.sections.links} cvs={userData.cvs} />}
         />
       </div>
       <Footer />

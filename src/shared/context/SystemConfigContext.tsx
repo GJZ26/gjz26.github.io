@@ -25,6 +25,9 @@ export function SystemConfigContextProvider({
   const [configs, setConfig] = useState(defaultConfig);
   const value = useMemo(() => ({ configs, setConfig }), [defaultConfig]);
 
+  // Seteamos las configuraciones por defecto!
+  document.documentElement.className = configs.global.currentTheme;
+
   return (
     <SystemConfigContext.Provider value={value}>
       {children}

@@ -9,12 +9,25 @@ export default function Footer() {
   return (
     <footer>
       <div>{/* Un Div Intensionalmente Vacío :D */}</div>
-      <span>GJZ26 @ {year}</span>
+      {config.global.showCredit ? <span>GJZ26 @ {year}</span> : ""}
+
       <div className="app-info">
-        <span className="version">
-          {systemTranslations.version} {config.version}
-        </span>
-        <a href="https://github.com/GJZ26/Portfolio"> {systemTranslations.source}</a>
+        {config.global.showVersion ? (
+          <span className="version">
+            {systemTranslations.version} {config.version}
+          </span>
+        ) : (
+          ""
+        )}
+
+        {config.global.showSource ? (
+          <a href="https://github.com/GJZ26/Portfolio">
+            {" "}
+            {systemTranslations.source}
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </footer>
   );

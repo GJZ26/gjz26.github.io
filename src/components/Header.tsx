@@ -10,52 +10,53 @@ export default function Header() {
 
   return (
     <header>
-      <div className="theme-picker">
-        <span>{systemTranslations.theme}</span>
-        <select
-          name="theme"
-          id="theme"
-          onInput={(event) => {
-            console.log((event.target as any).value)
-            changeTheme((event.target as any).value as ThemesAvailables);
-          }}
-        >
-          {Object.keys(Themes).map((theme, index) => {
-            const changeThemeTo = () => changeTheme(theme as ThemesAvailables);
+      {config.global.allowChangeTheme ? (
+        <div className="theme-picker">
+          <span>{systemTranslations.theme}</span>
+          <select
+            name="theme"
+            id="theme"
+            onInput={(event) => {
+              changeTheme((event.target as any).value as ThemesAvailables);
+            }}
+            defaultValue={config.global.currentTheme}
+          >
+            {Object.keys(Themes).map((theme, index) => {
+              const changeThemeTo = () =>
+                changeTheme(theme as ThemesAvailables);
 
+              return (
+                <option value={theme} onClick={changeThemeTo} key={index}>
+                  {systemTranslations[theme as ThemesAvailables]}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+      ) : (
+        <div></div>
+      )}
+      {config.global.translatable ? (
+        <div className="lang-picker">
+          {Object.keys(rawContext).map((key, index) => {
+            const translateTo = () => changeLang(key as AvailableLangs);
             return (
-              <option value={theme} onClick={changeThemeTo} key={index}>
-                {systemTranslations[theme as ThemesAvailables]}
-              </option>
+              <label htmlFor={key} key={index}>
+                {rawContext[key as AvailableLangs].language}
+                <input
+                  type="radio"
+                  name="lang"
+                  id={key}
+                  defaultChecked={config.global.currentLang === key}
+                  onClick={translateTo}
+                />
+              </label>
             );
           })}
-        </select>
-      </div>
-      <div className="lang-picker">
-        {Object.keys(rawContext).map((key, index) => {
-          const translateTo = () => changeLang(key as AvailableLangs);
-          return (
-            <label htmlFor={key} key={index}>
-              {rawContext[key as AvailableLangs].language}
-              <input
-                type="radio"
-                name="lang"
-                id={key}
-                defaultChecked={config.global.currentLang === key}
-                onClick={translateTo}
-              />
-            </label>
-          );
-        })}
-        {/* <label htmlFor="es">
-          Español
-          <input type="radio" name="lang" id="es" defaultChecked />
-        </label>
-        <label htmlFor="en">
-          English
-          <input type="radio" name="lang" id="en" />
-        </label> */}
-      </div>
+        </div>
+      ) : (
+        ""
+      )}
     </header>
   );
 }

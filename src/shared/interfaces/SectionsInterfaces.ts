@@ -1,3 +1,4 @@
+import { AvailableLangs } from "../config/LangsAvailables";
 import { DateRange, MonthYear } from "./TimeInterface";
 
 export type AboutData = string;
@@ -46,6 +47,16 @@ export interface LinkButton {
   icon?: Function;
 }
 
+export interface CVS {
+  lang: AvailableLangs;
+  uri: string;
+}
+
+export interface CVSData {
+  main: CVS;
+  secondary?: CVS;
+}
+
 export interface Info {
   image?: string;
   name: string;
@@ -60,4 +71,5 @@ export interface Info {
     side_project: SideProjectData;
     links: LinksData;
   };
+  cvs?: CVSData;
 }

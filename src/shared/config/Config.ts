@@ -22,7 +22,7 @@ export const defaultConfig: Config = {
     showVersion: true, // Show version in footer
     showSource: true, // Show link to source code
     showMinimap: true, // Show navigation map
-    inactiveHours: { // Indicate the time when you are not available
+    inactiveHours: { // - ? Indicate the time when you are not available
       start_hour: "00:00", // Inactivity start time (in 24-hour format)
       end_hour: "12:00", // End of inactivity time (in 24-hour format)
     },
@@ -32,8 +32,9 @@ export const defaultConfig: Config = {
     showTimeZone: true, // Show your time zone
     indicateStatus: true, // Show your schedule when you are not available
   },
-  experience: { // Professional experience section
-    abreviate_month: false, // Abbreviate months to 3 letters
+  experience: {
+    abreviate_month: true, // Render the full name of the months or just the first three letters of them
+    max_skills_listed: 3 // Maximum number of skills to render
   },
   links: { // Link section to your networks 
     showCV: true, // Generate and allow you to download your CV

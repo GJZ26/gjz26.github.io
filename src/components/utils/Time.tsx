@@ -4,6 +4,10 @@ import useConfig from "../../shared/hooks/useConfig";
 export default function Time() {
   const { config } = useConfig();
 
+  if (!config.global.timeZone || !config.head.showTimeZone) {
+    return <></>;
+  }
+
   const [time, setTime] = useState("00:00");
   const [isOff, setIsOff] = useState(false);
 
@@ -19,7 +23,8 @@ export default function Time() {
     const formatter = new Intl.DateTimeFormat([], options);
     const currentTime = formatter.format(new Date().getTime());
     setTime(currentTime);
-    setIsOff(isWithinRange(currentTime));
+
+    if (config.global.inactiveHours) setIsOff(isWithinRange(currentTime));
   }
 
   function isWithinRange(currentTime: string): boolean {
@@ -64,7 +69,7 @@ export default function Time() {
 
   return (
     <span>
-      {time} {isOff ? "🌙" : "🧑‍💻"}
+      {time} {config.global.inactiveHours && config.head.indicateStatus ? (isOff ? "🌙" : "🧑‍💻") : ""}
     </span>
   );
 }
