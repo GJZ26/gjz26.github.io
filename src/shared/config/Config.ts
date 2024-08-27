@@ -26,7 +26,7 @@ export const defaultConfig: Config = {
       start_hour: "00:00", // Inactivity start time (in 24-hour format)
       end_hour: "12:00", // End of inactivity time (in 24-hour format)
     },
-    timeZone: "America/Mexico_City", // Time zone of where you are living, to show visitors from another country what time it is for you.
+    timeZone: "America/Mexico_City", //? Time zone of where you are living, to show visitors from another country what time it is for you.
   },
   head: { // Section where your name appears
     showTimeZone: true, // Show your time zone
