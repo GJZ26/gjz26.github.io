@@ -1,6 +1,31 @@
 @import '../helpers/Variables.styl';
 
 div.certificates {
+    @media (max-width: 600px) {
+        div.cert-card {
+            width: 100% !important;
+
+            div.main {
+                flex-direction: column;
+                margin-bottom: 5px !important;
+
+                h3 {
+                    text-align: center;
+                }
+            }
+
+            div.foot {
+                justify-content: center !important;
+
+                &>span {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
     margin-top: 20px;
     display: flex;
     align-items: center;

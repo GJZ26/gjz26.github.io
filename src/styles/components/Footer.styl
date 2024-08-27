@@ -1,6 +1,21 @@
 @import '../helpers/Variables.styl';
 
 footer {
+    @media (max-width: 862px) {
+        div:not(:has(.app-info)) { /* Esto funcionar%C3%A1 solo si el `div` es hijo de un contenedor flex */
+            display: none;
+        }
+
+        span {
+            order: 1 !important;
+        }
+
+        div.app-info {
+            display: block !important;
+            order: 3 !important;
+        }
+    }
+
     position: absolute;
     bottom: 0;
     left: 0;

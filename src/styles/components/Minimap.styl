@@ -1,6 +1,10 @@
 @import '../helpers/Variables.styl';
 
 div.minimap {
+    @media (max-width: 862px) {
+        display: none;
+    }
+
     display: flex;
     flex-direction: column;
     position: fixed;

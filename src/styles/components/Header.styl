@@ -13,6 +13,10 @@ header {
     justify-content: space-between;
     padding: _pad_top _pad_side 0px _pad_side;
 
+    @media (max-width: 880px) {
+        position: absolute;
+    }
+
     div.theme-picker {
         display: flex;
         flex-direction: column;
@@ -22,7 +26,7 @@ header {
         }
 
         select {
-            background-color: background_color;
+            background-color: transparent;
             border: none;
             appearance: none;
             width: 100px;
@@ -30,6 +34,10 @@ header {
             cursor: pointer;
             padding: 0;
             margin-top: -3px;
+
+            option {
+                background-color: background_color;
+            }
 
             &:hover {
                 text-decoration: underline;
