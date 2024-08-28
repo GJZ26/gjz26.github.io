@@ -3,7 +3,6 @@ import {
   Dispatch,
   SetStateAction,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 import { Config } from "../interfaces/ConfigInterface";
@@ -24,7 +23,7 @@ export function SystemConfigContextProvider({
   children: JSX.Element;
 }) {
   const [configs, setConfig] = useState(defaultConfig);
-  const value = useMemo(() => ({ configs, setConfig }), [defaultConfig]);
+  const value = { configs, setConfig };
 
   // Seteamos las configuraciones por defecto!
   useEffect(() => {
