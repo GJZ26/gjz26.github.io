@@ -603,7 +603,7 @@ export const DataDemo: Info = {
 # Simple Portfolio (English)
 
 > [!IMPORTANT]  
-> The content of this section was automatically translated on deepl.com, it may not have a concise structure or the file may not follow the proper markdown syntax, resulting in corrupted rendering..
+> The content of this section was automatically translated on [deepl.com](https://deepl.com), it may not have a concise structure or the file may not follow the proper markdown syntax, resulting in corrupted rendering..
 
 ## Welcome to my portfolio template!
 I hope this template can help everyone who needs it to start their web portfolio, or at least be useful to modify and extend it as they wish.
