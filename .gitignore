@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Exclude all self data
-src/shared/data
-src/assets/images/self-*
