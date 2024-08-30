@@ -19,12 +19,12 @@ export default function Links({
       return (
         <div className="cvs">
           <a href={cvs.main.uri} download={true} className="main">
-            {systemTranslations.download_cv_in}{" "}
+            {rawContext[cvs.main.lang].download_cv_in}{" "}
             {rawContext[cvs.main.lang].language}
           </a>
           {cvs.secondary && (
             <a href={cvs.secondary.uri} download={true} className="second">
-              {systemTranslations.download_cv_in}{" "}
+              {rawContext[cvs.secondary.lang].download_cv_in}{" "}
               {rawContext[cvs.secondary.lang].language}
             </a>
           )}
