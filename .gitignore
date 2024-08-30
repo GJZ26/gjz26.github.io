@@ -24,7 +24,5 @@ dist-ssr
 *.sw?
 
 # Exclude all self data
-/src/shared/langs/*
-!/src/shared/langs/Demo/
 src/shared/data
 src/assets/images/self-*
