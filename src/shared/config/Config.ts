@@ -16,7 +16,7 @@ export const defaultConfig: Config = {
   global: { // General website configuration
     translatable: true, // Show the option to change languages
     allowChangeTheme: true, // Show the option to change themes
-    currentTheme: "dark", // Current theme (the one that will be displayed when opening the website for the first time)
+    currentTheme: "gray", // Current theme (the one that will be displayed when opening the website for the first time)
     currentLang: "demo", // Current language (The language that will be displayed by default)
     showCredit: true, // Show the year and the creator's nickname in the footer (Giving credits is important)
     showVersion: true, // Show version in footer
