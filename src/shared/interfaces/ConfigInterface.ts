@@ -19,6 +19,8 @@ export interface Config {
 
     timeZone?: TimeZone;
     inactiveHours?: HourRange;
+
+    favicon?: string
   };
 
   head: {
