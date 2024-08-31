@@ -28,6 +28,10 @@ export function SystemConfigContextProvider({
   // Seteamos las configuraciones por defecto!
   useEffect(() => {
     document.documentElement.className = configs.global.currentTheme;
+    const fav = document.createElement("link");
+    fav.rel = "icon";
+    fav.href = configs.global.favicon || "#";
+    document.head.appendChild(fav);
   }, []);
 
   return (

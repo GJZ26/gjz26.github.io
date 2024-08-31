@@ -13,20 +13,21 @@ import { version } from "../../../package.json";
 
 export const defaultConfig: Config = {
   version, // Application version, do not MANUALLY MODIFY
-  global: { // General website configuration
+  global: {
     translatable: true, // Show the option to change languages
     allowChangeTheme: true, // Show the option to change themes
-    currentTheme: "gray", // Current theme (the one that will be displayed when opening the website for the first time)
+    currentTheme: "mist", // Current theme (the one that will be displayed when opening the website for the first time)
     currentLang: "demo", // Current language (The language that will be displayed by default)
     showCredit: true, // Show the year and the creator's nickname in the footer (Giving credits is important)
     showVersion: true, // Show version in footer
     showSource: true, // Show link to source code
     showMinimap: true, // Show navigation map
-    inactiveHours: { // - ? Indicate the time when you are not available
+    inactiveHours: {
       start_hour: "00:00", // Inactivity start time (in 24-hour format)
       end_hour: "12:00", // End of inactivity time (in 24-hour format)
     },
-    timeZone: "America/Mexico_City", //? Time zone of where you are living, to show visitors from another country what time it is for you.
+    timeZone: "America/Mexico_City",
+    favicon: "./vite.svg" // Icon tab
   },
   head: { // Section where your name appears
     showTimeZone: true, // Show your time zone
