@@ -8,7 +8,7 @@ div.head {
 
     @media (max-width: 700px) {
         flex-direction: column;
-        text-align: center
+        text-align: center;
     }
 
     div.user-image {
@@ -23,6 +23,7 @@ div.head {
         &.only {
             width: 100%;
             text-align: center;
+            margin-top: 30px;
         }
 
         flex-grow: 0;
@@ -39,8 +40,8 @@ div.head {
 
         div.extra-info {
             span {
-                Extract(primary_color);
-                Dots(5px, 20px, 20.8px);
+                Extract(secondary_color);
+                Dots(5px, 20px, 20.8px, secondary_color);
             }
         }
     }

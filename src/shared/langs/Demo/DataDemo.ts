@@ -187,7 +187,6 @@ const side_project: SideProjectData = [
     year: 2022,
     description:
       "AI Recipe Generator is a web application that uses machine learning to create custom recipes based on available ingredients.",
-    image: "https://cataas.com/cat",
     uri: "https://cataas.com/cat/says/Man%2C%20I%20love%20cats?font=Comic%20Sans%20MS&fontSize=20&fontColor=%23000&fontBackground=%23fff&position=center",
   },
   {

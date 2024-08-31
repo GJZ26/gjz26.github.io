@@ -36,13 +36,17 @@ export const SystemDemo: LanguageTranslation = {
   on_site: "On-Site",
   hybrid: "Hybrid",
   present: "Present",
-  dark: "Dark",
-  light: "Light",
+  mist: "Mist",
+  zebra: "Zebra",
   debug: "Debug",
+  emerald_oasis: "Emeral Oasis",
   empty_experience: "No experience to show",
   empty_certificates: "No certificate to show",
   empty_side_projects: "No side project to show",
   empty_links: "No links to show",
   skills: "Skills",
-  download_cv_in: "Download CV in"
+  download_cv_in: "Download CV in",
+  alba_sky: "Light Blue",
+  warm_ash: "Warm Ash",
+  crimson_nocturne: "Crimson Nocturne"
 };
