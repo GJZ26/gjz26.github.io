@@ -11,6 +11,16 @@ import {
   SideProjectData,
 } from "../../interfaces/SectionsInterfaces";
 
+import Generative_Calendar from "../../../assets/images/generative_calendar.png";
+import HideNSeek from "../../../assets/images/hidenseek.png";
+import PyeTools from "../../../assets/images/pyetools.png";
+import TCPChatServer from '../../../assets/images/tcpchat.png'
+
+import DataAnalysisGoogle from '../../../assets/images/self-certificado-de-analisis-de-datos-de-google.png'
+import CiberSecurityGoogle from '../../../assets/images/self-certificado-de-ciberseguridad-de-google.png'
+import AWSCloudArchitecting from '../../../assets/images/self-aws-academy-graduate-aws-academy-cloud-architecting.png'
+import AWSCloudFoundations from '../../../assets/images/self-aws-academy-graduate-aws-academy-cloud-foundations.png'
+
 const name = "Adolfo";
 const lastname = "González Juárez";
 const role = "Software Developer";
@@ -22,8 +32,7 @@ const location: Location = {
   state: "Chiapas",
 };
 
-const about =
-  `I'm Adolfo, a back-end web developer with +${new Date().getFullYear() - 2021} years of experience. I love to face challenges and work on projects that allow me to grow and have fun in the process. I enjoy sharing my progress with people who, like me, are passionate about technology.`;
+const about = `Software developer specialized in web development, passionate about creating scalable and efficient solutions. I focus on the optimization, security and viability of each project. Always looking to learn and improve, I enjoy adopting new technologies to take my work to the next level. Welcome!`;
 
 /*
   #############################
@@ -35,7 +44,7 @@ const experiences: ExperienceData = [
     company: "Confidential Company",
     role: "Full-stack Developer",
     description:
-      "I developed the first version of a platform for clients, I was in charge of the integration of email automation for subscriptions and OTP codes.",
+      "I developed the first version of a client platform, leading the integration of automations for sending emails, subscriptions, and OTP codes, improving efficiency and user experience.",
     duration: {
       init: {
         month: "Nov",
@@ -58,7 +67,7 @@ const experiences: ExperienceData = [
     company: "Régimen de Chiapas",
     role: "Internal Developer",
     description:
-      "I developed a script to automate the review and publication of relevant content for the company, optimizing 70% of the work process. In addition to making improvements in the dissemination strategies of the company thanks to SEO optimization.",
+      "Automated the review and publication of relevant content, optimizing the process by 70%. Implemented improvements in the company's dissemination strategies through advanced SEO optimization.",
     duration: {
       init: {
         month: "Aug",
@@ -82,7 +91,7 @@ const experiences: ExperienceData = [
     company: "Universidad Autónoma de Chiapas",
     role: "Back-end Developer",
     description:
-      "I led a development team in the creation of server-side services, in addition to contributing from the initial phases of the project to ensure the efficiency and quality of the development.",
+      "I led a development team in the creation of server-side services, ensuring efficiency and quality from the initial phases of the project.",
     duration: {
       init: {
         month: "Apr",
@@ -106,7 +115,7 @@ const experiences: ExperienceData = [
     company: "Escrow Recovery Services LLC.",
     role: "Front-end Developer",
     description:
-      "I designed and built a landing page using modern Javascript library, increasing the loading time by 90%.",
+      "I designed and developed a landing page with modern JavaScript libraries, achieving a 90% increase in loading speed.",
     duration: {
       init: {
         month: "Feb",
@@ -129,7 +138,7 @@ const experiences: ExperienceData = [
     company: "Royalty Capital LLC.",
     role: "Front-end Developer",
     description:
-      "I built a landing page from scratch, with the help of pre-existing designs. I used javascript frameworks and CSS pre-processors to improve the performance and maintainability of the product, increasing the loading speed and reducing website maintenance costs.",
+      "I built a landing page from scratch, using JavaScript frameworks and CSS preprocessors to improve the performance and maintainability of the product, increasing loading speed and reducing maintenance costs.",
     duration: {
       init: {
         month: "Jan",
@@ -166,7 +175,7 @@ const certificates: CertificateData = [
     issuer: "Google",
     uri: "https://www.coursera.org/account/accomplishments/specialization/P2TJENBFS0VI",
     badge:
-      "/src/assets/images/self-certificado-de-analisis-de-datos-de-google.png",
+      DataAnalysisGoogle,
     skills: ["Data Analysis", "SQL", "DataViz"],
   },
   {
@@ -178,7 +187,7 @@ const certificates: CertificateData = [
     issuer: "Google",
     uri: "https://www.coursera.org/account/accomplishments/specialization/DTTYM72PC6HS",
     badge:
-      "/src/assets/images/self-certificado-de-ciberseguridad-de-google.png",
+      CiberSecurityGoogle,
     skills: ["Linux", "SIEM", "IDS"],
   },
   {
@@ -190,7 +199,7 @@ const certificates: CertificateData = [
     issuer: "Amazon Web Services (AWS)",
     uri: "https://www.credly.com/badges/1fb69f3c-d6a1-48ce-b77a-883cacccdac3/linked_in_profile",
     badge:
-      "/src/assets/images/self-aws-academy-graduate-aws-academy-cloud-architecting.png",
+      AWSCloudArchitecting,
     skills: ["Architecting Solutions", "Building Infrastructure"],
   },
   {
@@ -202,7 +211,7 @@ const certificates: CertificateData = [
     issuer: "Amazon Web Services (AWS)",
     uri: "https://www.credly.com/badges/997d982b-1143-4e69-9953-95cd35fa4996/linked_in_profile",
     badge:
-      "/src/assets/images/self-aws-academy-graduate-aws-academy-cloud-foundations.png",
+      AWSCloudFoundations,
     skills: ["AWS Architecture", "AWS Core Services", "AWS Support"],
   },
 ];
@@ -217,23 +226,33 @@ const side_project: SideProjectData = [
     title: "Generative Calendar",
     year: 2024,
     description:
-      "The Generative Calendar is a genetic algorithm that analyzes the best alternative schedules for students in irregular states (Academic use only).",
-    image: undefined,
+      "Genetic algorithm designed to optimize schedules of students in irregular situations, facilitating time management for the university student community.",
+    image: Generative_Calendar,
     uri: "https://github.com/GJZ26/Generative-Calendar",
   },
   {
     title: "HideNSeek",
     year: 2023,
     description:
-      "A rudimentary video game engine built from scratch with JS.",
+      "Rudimentary video game engine built from scratch with JavaScript, including rendering mechanics, object tracking and render distance (Unfinished).",
     uri: "https://github.com/GJZ26/HideNSeek",
+    image: HideNSeek,
   },
   {
     title: "PyE Tools",
     year: 2023,
     description:
-      "Python module with a set of functions that help you to make frequency distribution tables in an easy and beautiful way.",
+      "Módulo en Python que proporciona funciones para crear tablas de distribución de frecuencia y realizar procedimientos probabilísticos de manera eficiente.",
     uri: "https://github.com/GJZ26/Probabilidad-Y-Estadistica",
+    image: PyeTools,
+  },
+  {
+    title: "TCP-Chat Server",
+    description:
+      "Terminal-based messaging service developed with JavaScript and Node.js, optimized for unstable connections and resource-constrained computers. Designed to provide unencrypted chat in terminal environments.",
+    year: 2023,
+    uri:"https://github.com/GJZ26/TCP-Chat-Server/",
+    image: TCPChatServer,
   },
 ];
 

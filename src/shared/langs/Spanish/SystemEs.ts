@@ -36,13 +36,12 @@ export const SystemEs: LanguageTranslation = {
   on_site: "Presencial",
   hybrid: "Híbrido",
   present: "Presente",
-  dark: "Oscuro",
-  light: "Claro",
-  debug: "De Prueba",
   empty_experience: "No hay experiencias que mostrar.",
   empty_certificates: "No hay certificaciones que mostrar.",
   empty_side_projects: "No hay proyectos personales que mostrar.",
   empty_links: "No hay enlaces que mostrar",
   skills: "Habilidades",
   download_cv_in: "Descargar CV en",
+  warm_ash: "Oscuro",
+  alba_sky: "Claro"
 };
