@@ -242,7 +242,7 @@ const side_project: SideProjectData = [
     title: "PyE Tools",
     year: 2023,
     description:
-      "Módulo en Python que proporciona funciones para crear tablas de distribución de frecuencia y realizar procedimientos probabilísticos de manera eficiente.",
+      "Python module that provides functions to create frequency distribution tables and perform probabilistic procedures efficiently.",
     uri: "https://github.com/GJZ26/Probabilidad-Y-Estadistica",
     image: PyeTools,
   },
