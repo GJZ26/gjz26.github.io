@@ -71,6 +71,7 @@ const experiences: ExperienceData = [
     },
     mode: "remote", // ? - How did you work in this company?
     skills: ["Java", "Spring Boot", "MySQL"], // ? -Outstanding skills
+    uri: "https://site.com"
   },
   // ... Other example records ...
   {

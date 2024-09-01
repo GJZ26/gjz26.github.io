@@ -1,3 +1,4 @@
+import Arrow from "../assets/icons/Arrow";
 import useConfig from "../shared/hooks/useConfig";
 import useSystemTranslations from "../shared/hooks/useSystemTranslations";
 import { Experience } from "../shared/interfaces/SectionsInterfaces";
@@ -62,6 +63,7 @@ export default function TimelineSegment({
       return (
         <a href={experience.uri} target="_blank" rel="noopener noreferrer">
           {experience.company}
+          <Arrow />
         </a>
       );
     }

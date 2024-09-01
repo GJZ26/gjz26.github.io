@@ -1,3 +1,4 @@
+import Arrow from "../assets/icons/Arrow";
 import useSystemTranslations from "../shared/hooks/useSystemTranslations";
 import { Certificate } from "../shared/interfaces/SectionsInterfaces";
 
@@ -51,6 +52,7 @@ export default function CertificatesCard({
         <h3 className={renderTitleClass()}>
           <a href={certificate.uri} target="_blank" rel="noopener noreferrer">
             {certificate.title}
+            <Arrow />
           </a>
         </h3>
       </div>

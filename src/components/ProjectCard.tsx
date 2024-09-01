@@ -1,3 +1,4 @@
+import Arrow from "../assets/icons/Arrow";
 import { SideProject } from "../shared/interfaces/SectionsInterfaces";
 
 export default function ProjectCard({ project }: { project: SideProject }) {
@@ -15,6 +16,7 @@ export default function ProjectCard({ project }: { project: SideProject }) {
           {project.uri ? (
             <a href={project.uri} target="_blank" rel="noopener noreferrer">
               {project.title}
+              <Arrow />
             </a>
           ) : (
             project.title
