@@ -1,3 +1,4 @@
+import Arrow from "../assets/icons/Arrow";
 import ButtonLink from "../components/ButtonLink";
 import useConfig from "../shared/hooks/useConfig";
 import useSystemTranslations from "../shared/hooks/useSystemTranslations";
@@ -21,11 +22,13 @@ export default function Links({
           <a href={cvs.main.uri} download={true} className="main">
             {rawContext[cvs.main.lang].download_cv_in}{" "}
             {rawContext[cvs.main.lang].language}
+            <Arrow />
           </a>
           {cvs.secondary && (
             <a href={cvs.secondary.uri} download={true} className="second">
               {rawContext[cvs.secondary.lang].download_cv_in}{" "}
               {rawContext[cvs.secondary.lang].language}
+              <Arrow />
             </a>
           )}
         </div>
