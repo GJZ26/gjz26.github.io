@@ -34,6 +34,6 @@ export const defaultConfig: Config = {
     max_skills_listed: 3 // Maximum number of skills to render
   },
   links: { // Link section to your networks 
-    showCV: true, // Generate and allow you to download your CV
+    showCV: false, // Generate and allow you to download your CV
   },
 };
