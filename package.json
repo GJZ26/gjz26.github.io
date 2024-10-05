@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.3.1",
   "type": "module",
-  "homepage": "https://GJZ26.github.io/Portfolio",
+  "homepage": "https://GJZ26.github.io/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
