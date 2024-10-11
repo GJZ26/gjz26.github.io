@@ -13,7 +13,7 @@ export default function useConfig() {
       ...prevConfig,
       global: {
         ...prevConfig.global,
-        currentLang: lang,
+        defaultLang: lang,
       },
     }));
   }, [setConfig]);
@@ -24,7 +24,7 @@ export default function useConfig() {
       ...prevConfig,
       global: {
         ...prevConfig.global,
-        currentTheme: theme,
+        defaultTheme: theme,
       },
     }));
   }, [setConfig]);
