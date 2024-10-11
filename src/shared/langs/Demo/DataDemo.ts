@@ -231,11 +231,11 @@ export const links: LinksData = [
 
 export const cvs: CVSData = { // ? -List of resumes for users to download
   main: { // Main curriculum vitae
-    lang: "demo", // Preferably in the language in which the web site is displayed
+    lang: "en", // Preferably in the language in which the web site is displayed
     uri: "#", // Link to resume resource
   },
   secondary: { // ? - Translated version of the resume
-    lang: "demo",
+    lang: "en",
     uri: "#", 
   },
 };

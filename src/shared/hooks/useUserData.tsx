@@ -11,5 +11,5 @@ export default function useUserData() {
     throw new Error("Contexto no encontrado :D");
   }
 
-  return { userData: context[config.config.global.currentLang] };
+  return { userData: context[config.config.global.defaultLang] };
 }

@@ -12,6 +12,6 @@ export default function useSystemTranslations() {
 
   return {
     rawContext: context,
-    systemTranslations: context[config.global.currentLang],
+    systemTranslations: context[config.global.defaultLang],
   };
 }

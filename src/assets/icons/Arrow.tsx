@@ -17,9 +17,9 @@ export default function Arrow() {
             id="Vector"
             d="M 12,17 V 7 m 0,0 -4,4 m 4,-4 4,4"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>
