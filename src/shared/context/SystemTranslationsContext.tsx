@@ -13,7 +13,7 @@ export function SystemTranslationsContextProvider({
 }) {
   const { config } = useConfig();
 
-  document.title = SystemData[config.global.currentLang].title;
+  document.title = SystemData[config.global.defaultLang].title;
 
   return (
     <SystemTranslationsContext.Provider value={SystemData}>

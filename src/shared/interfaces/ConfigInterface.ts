@@ -9,8 +9,11 @@ export interface Config {
     translatable: boolean;
     allowChangeTheme: boolean;
 
-    currentTheme: ThemesAvailables;
-    currentLang: AvailableLangs;
+    defaultTheme: ThemesAvailables;
+    defaultLang: AvailableLangs;
+
+    useSystemThemeScheme:boolean;
+    useSystemLanguage: boolean;
 
     showCredit: boolean;
     showVersion: boolean;
@@ -20,7 +23,7 @@ export interface Config {
     timeZone?: TimeZone;
     inactiveHours?: HourRange;
 
-    favicon?: string
+    favicon?: string;
   };
 
   head: {

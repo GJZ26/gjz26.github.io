@@ -21,7 +21,7 @@ export default function Footer() {
         )}
 
         {config.global.showSource ? (
-          <a href="https://github.com/GJZ26/Portfolio">
+          <a href="https://github.com/GJZ26/gjz26.github.io">
             {" "}
             {systemTranslations.source}
           </a>

@@ -22,7 +22,7 @@ export default function Header() {
           onInput={(event) => {
             changeTheme((event.target as any).value as ThemesAvailables);
           }}
-          defaultValue={config.global.currentTheme}
+          defaultValue={config.global.defaultTheme}
         >
           {Object.keys(Themes).map((theme, index) => (
             <option value={theme} key={index}>
@@ -50,7 +50,7 @@ export default function Header() {
                 type="radio"
                 name="lang"
                 id={key}
-                defaultChecked={config.global.currentLang === key}
+                defaultChecked={config.global.defaultLang === key}
                 onClick={translateTo}
               />
             </label>
