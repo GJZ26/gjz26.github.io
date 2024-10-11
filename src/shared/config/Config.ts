@@ -16,7 +16,7 @@ export const defaultConfig: Config = {
   global: {
     translatable: true, // Show the option to change languages
     allowChangeTheme: true, // Show the option to change themes
-    defaultTheme: "alba_sky", // Default theme (the one that will be displayed when opening the website for the first time)
+    defaultTheme: "warm_ash", // Default theme (the one that will be displayed when opening the website for the first time)
     defaultLang: "en", // Default language (The language that will be displayed by default)
     useSystemThemeScheme: true, // Use system theme scheme
     useSystemLanguage: true, // Use system language
